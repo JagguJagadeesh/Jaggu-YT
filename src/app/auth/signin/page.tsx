@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, {  useState } from 'react'
 import {
   Card,
   CardContent,
@@ -17,7 +17,8 @@ function SignIN() {
   const [formData,setFormData] = useState({
     email:'',
     password:''
-  })
+  })  
+  
 
   const handleSignIN = ()=>{
     console.log(formData)
@@ -25,7 +26,7 @@ function SignIN() {
   }
 
   return (
-    <div className='w-screen h-screen flex items-center justify-center m-auto bg-black'>
+    <div className='w-screen mt-10 flex items-center justify-center m-auto'>
       <Card className=' w-96 px-2 py-4'>
         <CardHeader className='w-full flex flex-col gap-2 p-0 items-center'>
           <CardTitle>
@@ -33,7 +34,7 @@ function SignIN() {
             <AvatarImage className='w-24 rounded-md' src="/jaggu-high-resolution-logo.png" />
           </Avatar>
           </CardTitle>
-          <CardDescription className='text-xl text-black font-sans'>Signin to account / <Link className='underline' href='/auth/signup'>Signup</Link></CardDescription>
+          <CardDescription className='text-xl font-sans'>Don`t have an account ? <Link className='underline' href='/auth/signup'>Signup</Link></CardDescription>
         </CardHeader><hr className='my-4' />
         <CardContent>
           <Input onChange={(e)=>setFormData((data)=>({...data,email:e.target.value}))} value={formData.email} type='email' placeholder='Email' required />
@@ -42,7 +43,7 @@ function SignIN() {
           <Input onChange={(e)=>setFormData((data)=>({...data,password:e.target.value}))} value={formData.password} type='password' placeholder='Password' required />
         </CardContent>
         <CardFooter >
-          <Button onClick={handleSignIN} className='w-full mt-6'>Signin</Button>
+          <Button onClick={handleSignIN} className='w-full py-6 mt-6' disabled={!formData || !formData.password} >Signin</Button>
         </CardFooter>
       </Card>
     </div>

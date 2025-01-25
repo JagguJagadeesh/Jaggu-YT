@@ -28,7 +28,7 @@ function SignUP() {
 
 
   return (
-    <div className='w-screen h-screen flex items-center justify-center m-auto bg-black'>
+    <div className='w-screen mt-8 flex items-center justify-center m-auto'>
       <Card className=' w-96 px-2 py-4'>
         <CardHeader className='w-full flex flex-col gap-2 p-0 items-center'>
           <CardTitle>
@@ -36,7 +36,7 @@ function SignUP() {
             <AvatarImage className='w-24 rounded-md' src="/jaggu-high-resolution-logo.png" />
           </Avatar>
           </CardTitle>
-          <CardDescription className='text-xl text-black font-sans'>Don't have account / <Link className='underline' href='/auth/signin'>Signin</Link></CardDescription>
+          <CardDescription className='text-xl font-sans'>Allready have an account ? <Link className='underline' href='/auth/signin'>Signin</Link></CardDescription>
         </CardHeader><hr className='my-4' />
         <CardContent>
           <Input onChange={(e)=>setFormData((data)=>({...data,username:e.target.value}))} value={formData.username} type='text' placeholder='UserName' required />
@@ -48,7 +48,7 @@ function SignUP() {
           <Input onChange={(e)=>setFormData((data)=>({...data,password:e.target.value}))} value={formData.password} type='password' placeholder='Password' required />
         </CardContent>
         <CardFooter >
-          <Button onClick={handleSignin} className='w-full mt-6'>Signup</Button>
+          <Button onClick={handleSignin} className='w-full py-6 mt-6' disabled={!formData.username || !formData.email || !formData.password}>Signup</Button>
         </CardFooter>
       </Card>
     </div>
