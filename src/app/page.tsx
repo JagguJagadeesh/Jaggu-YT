@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className='flex  text-white bg-black'>
       {/* SideBar */}
-      <div className="absolute h-[31rem] flex mb-auto px-4 border-r ">
+      <div className="bg-gray-950 h-[31rem] flex mb-auto px-4  ">
       <div className="h-[31.6rem] w-full overflow-y-auto flex flex-col gap-4 items-center pt-4 ">
         <Link href='/' className="">
           <HomeIcon/>
@@ -37,19 +37,7 @@ export default function Home() {
         </Link>
         <Separator/>
         <Link href='/' className="">
-          <FileArchiveIcon/>
-        </Link>
-        <Link href='/' className="">
-          <FileArchiveIcon/>
-        </Link>
-        <Link href='/' className="">
-          <FileArchiveIcon/>
-        </Link>
-        <Link href='/' className="">
-          <FileArchiveIcon/>
-        </Link>
-        <Link href='/' className="">
-          <FileArchiveIcon/>
+          ...
         </Link>
       </div>
       </div>

@@ -10,16 +10,19 @@ import {
  } from '@/components/ui/sheet';
 import { MenuIcon,SearchIcon } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 // import { MoonIcon, Sun } from "lucide-react"
 // import { useTheme } from "next-themes"
 
 export default function NavBar() {
   const [search, setSearch] = useState('')
+  const route = useRouter()
   // const { setTheme , theme } = useTheme()
 
   const handleSearch = ()=>{
     console.log(search)
+    if(search !== '') route.push(`/${search}`)
   }
 
   // const toggleTheme = () => {
@@ -27,7 +30,7 @@ export default function NavBar() {
   // };
 
   return (
-    <div className='w-screen bg-slate-800'>
+    <div className='w-full bg-gray-950'>
       <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6 ">
       <Sheet>
         <SheetTrigger asChild>
@@ -93,10 +96,10 @@ export default function NavBar() {
         </Link>
         <Link
           href="/yt/yt-profile"
-          className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-slate-800 px-4 py-2 text-sm font-medium transition-colors   focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+          className=""
           prefetch={false}
         >
-          <Avatar className='bg-slate-800 rounded-full'><AvatarImage className='' src="https://github.com/shadcn.png" /></Avatar>
+          <Avatar className='bg- rounded-full'><AvatarImage className='' src="https://github.com/shadcn.png" /></Avatar>
         </Link>
       </nav>
       </header>
